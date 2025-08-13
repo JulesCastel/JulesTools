@@ -78,9 +78,9 @@ if __name__ == "__main__":
     # change to look for other sections
     url = "https://schedule.dallascollege.edu//FALL/RLC/Prefix/PHYS"
     regNumber = "4008317"
-    
+
     print(f"{bcolors.HEADER}is PHYS2425 with Song open or not?")
-    print(f"{bcolors.HEADER}=" * 45)
+    print(f"{bcolors.HEADER}=" * 45 + '\n')
 
     result = checkAvailability(url, regNumber)
 
