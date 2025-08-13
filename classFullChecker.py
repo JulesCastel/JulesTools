@@ -16,13 +16,11 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-def checkAvailability():
+def checkAvailability(url, regNumber):
     """
     for checking to see if PHYS 2425 with Song has any open spots.
     theoretically this should work for other classes if you change the URL and course number
     """
-    url = "https://schedule.dallascollege.edu//FALL/RLC/Prefix/PHYS"
-    regNumber = "4008317"
 
     try:
         print(f"{bcolors.OKCYAN}checking availability...")
@@ -77,9 +75,14 @@ def checkAvailability():
         return None
 
 if __name__ == "__main__":
+    # change to look for other sections
+    url = "https://schedule.dallascollege.edu//FALL/RLC/Prefix/PHYS"
+    regNumber = "4008317"
+    
     print(f"{bcolors.HEADER}is PHYS2425 with Song open or not?")
     print(f"{bcolors.HEADER}=" * 45)
-    result = checkAvailability()
+
+    result = checkAvailability(url, regNumber)
 
     if result is True:
         sys.exit(0)
