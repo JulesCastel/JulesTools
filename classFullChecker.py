@@ -47,7 +47,7 @@ def checkAvailability():
                         print(f"{bcolors.BOLD + bcolors.OKBLUE}result: {status.upper()}")
 
                         if "open" in status:
-                            print(f"{bcolors.OKGREEN}SPOTS AVAILABLE!!! register NOW!!!! GOGOGOGO")
+                            print(f"{bcolors.OKGREEN}SPOTS AVAILABLE!!! register NOW!!!! GOGOGOGO: https://www.myworkday.com/dallascollege/d/task/2998$28771.htmld#backheader=true")
                             return True
                         elif "full" in status:
                             print(f"{bcolors.FAIL}course is still full :(")
