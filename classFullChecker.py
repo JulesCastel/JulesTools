@@ -37,6 +37,8 @@ def checkAvailability(url: str, regNumber: str) -> Optional[bool]:
                 # ignore the PyLance error here, the type hinting is gonna be changed soon according to the BS4 repo
                 # https://github.com/python/typeshed/issues/8356
                 cells: List[Tag] = row.find_all('td') # type: ignore
+                # we're looking for the table rows for classes, which have 7 columns
+                # so cutting out any other tables that might not apply
                 if len(cells) >= 5:
                     rowText: str = row.get_text()
                     if regNumber in rowText:
