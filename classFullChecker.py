@@ -41,15 +41,18 @@ def checkAvailability():
                 if len(cells) >= 5:
                     rowText = row.get_text()
                     if regNumber in rowText:
+                        # we are looking for the 5th column of each class table row
+                        # but each row starts with a <th> element
+                        # so technically, we're only looking for the 4th <td> element
                         statusCell = cells[3]
-                        status = statusCell.get_text().strip().lower()
+                        status = statusCell.get_text().upper()
 
-                        print(f"{bcolors.BOLD + bcolors.OKBLUE}result: {status.upper()}")
+                        print(f"{bcolors.BOLD + bcolors.OKBLUE}result: {status}")
 
-                        if "open" in status:
+                        if "OPEN" in status:
                             print(f"{bcolors.OKGREEN}SPOTS AVAILABLE!!! register NOW!!!! GOGOGOGO: https://www.myworkday.com/dallascollege/d/task/2998$28771.htmld#backheader=true")
                             return True
-                        elif "full" in status:
+                        elif "FULL" in status:
                             print(f"{bcolors.FAIL}course is still full :(")
                             return False
                         else:
@@ -62,7 +65,8 @@ def checkAvailability():
         print("- the course number change?")
         print("- the page structure change?")
         print("- the course get removed from the schedule?")
-        print("idk, double check the page")
+        print("- the school block the request? lol")
+        print("idk, double check the page or try again if it got blocked")
         return None
 
     except requests.exceptions.RequestException as e:
