@@ -16,7 +16,7 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-def checkAvailability(url, regNumber):
+def checkAvailability(url: str, regNumber: str):
     """
     for checking to see if PHYS 2425 with Song has any open spots.
     theoretically this should work for other classes if you change the URL and course number
