@@ -37,7 +37,7 @@ def checkAvailability():
             for row in rows:
                 # ignore the PyLance error here, the type hinting is gonna be changed soon according to the BS4 repo
                 # https://github.com/python/typeshed/issues/8356
-                cells = row.find_all('td')
+                cells = row.find_all('td') # type: ignore
                 if len(cells) >= 5:
                     rowText = row.get_text()
                     if regNumber in rowText:
