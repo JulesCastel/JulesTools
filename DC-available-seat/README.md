@@ -65,7 +65,7 @@ if you close your terminal, you'll need to reactivate the venv before running th
 
 ## contributing
 
-feel free to modify and improve this script by opening a pull request! Some ideas:
+feel free to modify and improve this script by making your own fork and opening a pull request! Some ideas:
 - add email notifications
 - add support for multiple courses
 - add scheduling to run automatically
