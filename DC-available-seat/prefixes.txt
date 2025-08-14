@@ -1,0 +1,245 @@
+Accounting
+ACCT
+ACNT
+Advanced Manufacturing/Engineering
+SMFT
+Agriculture
+AGRI
+Air Conditioning and Refrigeration Technology
+HART
+Anthropology
+ANTH
+Architecture
+ARCH
+Art
+ARTS
+ITXR
+Associate Degree Nursing
+RNSG
+Astronomy
+PHYS
+Autobody Technology
+ABDR
+Automotive Technology
+AUMT
+Biology
+BIOL
+Business Administration Management
+BUSI
+Business Office Systems and Support
+POFI
+POFM
+POFT
+Cardiac Sonography
+DSAE
+Chemistry
+CHEM
+Commercial Music
+MUSB
+MUSC
+MUSP
+Communication
+COMM
+Computer Aided Design and Drafting
+ARCE
+DFTG
+Computer Information Technology
+BCIS
+COSC
+ITAI
+ITCC
+ITDA
+ITMT
+ITNW
+ITSC
+ITSD
+ITSE
+ITSY
+Conflict Management
+CMDR
+Construction
+HART
+Construction Technology
+CNBT
+CRPT
+OSHT
+PFPB
+WDWK
+Criminal Justice
+CJSA
+CRIJ
+HMSY
+PSYT
+Culinary/Pastry/Hospitality
+CHEF
+HAMG
+PSTR
+RSTO
+Cyber Security
+ITDF
+Dance
+DANC
+Dental Hygiene
+DHYG
+Developmental Integrated Reading and Writing
+DIRW
+Developmental Mathematics
+DMAT
+Diagnostic Medical
+DMSO
+Diagnostic Medical Sonography
+DMSO
+DSVT
+SCIT
+Diesel Technology and Heavy Equipment
+DEMR
+Digital Art and Design
+ARTC
+UXUI
+Digital Media Technology
+PHTC
+Drama
+DRAM
+Economics
+ECON
+Education
+EDUC
+Education: Early Childhood
+CDEC
+EDEC
+HDEV
+TECA
+Education: Elementary Education
+EDEL
+Education: Information/Technology
+EDIT
+Education: Language and Literacy
+EDLL
+Education: Teacher Education
+EDTP
+Electrical Technology
+ELPT
+ELTN
+IEIR
+Emergency Medical Services
+EMSP
+Engine Technology
+MTRC
+SMER
+Engineering
+ENGR
+English
+ENGL
+Environmental Science
+ENVR
+Geography
+GEOG
+Geology
+GEOL
+Geospatial Information Systems Technology
+GISC
+Gerontology
+GERS
+Government
+GOVT
+Health Information Technology
+HITT
+Health Professions Readiness
+HPRS
+History
+HIST
+Hospitality, Exhibition and Event Management
+TRVM
+Humanities
+HUMA
+Insurance
+MRKG
+Interactive Simulation and Game Technology
+GAME
+Interior Design
+INDS
+International Business and Trade
+IBUS
+Internet Development Technologies
+INEW
+Invasive Cardiovascular Technology
+CVTT
+Magnetic Resonance Imaging
+MRIT
+Management
+BMGT
+BUSG
+HRPO
+Manufacturing Technology
+CETT
+EECT
+ELMT
+HYDR
+INTC
+MCHN
+MFGT
+RBTC
+Marketing Careers
+MRKG
+Mathematics
+MATH
+Medical Assisting/Medical Front Office
+MDCA
+Medical Laboratory Technology
+MLAB
+Mortgage Banking
+BNKG
+Multimedia Technology
+IMED
+Music
+MUAP
+MUEN
+MUSI
+Occupational Therapy
+OTHA
+Paralegal
+LGLA
+Philosophy/Religion
+PHIL
+Physical Education
+KINE
+PHED
+Physics/Astronomy
+PHYS
+Psychology
+PSYC
+Radiologic Sciences
+CTMT
+RADR
+VIRT
+Real Estate
+RELE
+Respiratory Care
+RSPT
+Social Work
+SCWK
+SOCW
+Sociology
+SOCI
+Sonography
+DSVT
+SCIT
+Speech Communication
+SPCH
+Substance Abuse Counseling
+DAAC
+Surgical Technologist
+SRGT
+Surveying Technology
+SRVY
+Technical Theater and Live Events
+DRTE
+Veterinary Technology
+VTHT
+Video Technology
+FLMC
+RTVB
+Visual Communications
+ARTV
+Vocational Nursing
+VNSG
