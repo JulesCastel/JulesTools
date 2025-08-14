@@ -78,8 +78,9 @@ def checkAvailability(url: str, regNumber: str) -> Optional[bool]:
         return None
 
 def main() -> None:
-    # change to look for other sections
+    # change the semester/campus/subject to whatever you need
     url: str = "https://schedule.dallascollege.edu//FALL/RLC/Prefix/PHYS"
+    # change to the desired course registration number
     regNumber: str = "4008317"
 
     print(f"{bcolors.HEADER}is PHYS2425 with Song open or not?")
