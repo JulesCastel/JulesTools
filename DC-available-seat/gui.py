@@ -1,27 +1,27 @@
-from PyQt6.QtCore import QSize, Qt
+from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QStandardItem
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QComboBox, QLineEdit, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QMainWindow, QPushButton, QLabel, QComboBox, QLineEdit, QVBoxLayout, QWidget
+from typing import Optional
 import classFullChecker
-import sys
 
 class MainWindow(QMainWindow):
-    def __init__(self):
-        self.prefix = ""
-        self.regNumber = ""
+    def __init__(self) -> None:
+        self.prefix: str = ""
+        self.regNumber: str = ""
 
         super().__init__()
 
         self.setWindowTitle("Dallas College Course Availability Checker")
-        layout = QVBoxLayout()
+        layout: QVBoxLayout = QVBoxLayout()
 
-        self.prefixLabel = QLabel("course prefix:")
-        self.prefixDropdown = QComboBox()
+        self.prefixLabel: QLabel = QLabel("course prefix:")
+        self.prefixDropdown: QComboBox = QComboBox()
         self.prefixDropdown.currentTextChanged.connect(self.prefixSelected)
         layout.addWidget(self.prefixLabel)
         layout.addWidget(self.prefixDropdown)
 
-        self.regLabel = QLabel("registration #:")
-        self.regInput = QLineEdit()
+        self.regLabel: QLabel = QLabel("registration #:")
+        self.regInput: QLineEdit = QLineEdit()
         self.regInput.setMaxLength(7)
         self.regInput.setInputMask("9999999;_")
         self.regInput.setPlaceholderText("enter 7-digit registration #")
@@ -29,39 +29,39 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.regLabel)
         layout.addWidget(self.regInput)
 
-        self.checkButton = QPushButton("check availability")
+        self.checkButton: QPushButton = QPushButton("check availability")
         # stupid PyLance
         self.checkButton.clicked.connect(self.check) # type: ignore
         layout.addWidget(self.checkButton)
 
-        self.availableLabel = QLabel()
+        self.availableLabel: QLabel = QLabel()
         layout.addWidget(self.availableLabel)
 
-        container = QWidget()
+        container: QWidget = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
 
-    def populatePrefixes(self, filename: str):
+    def populatePrefixes(self, filename: str) -> None:
         print("adding prefixes...")
         self.prefixDropdown.addItem("select course prefix")
         # PyLance again being weird with the hinting, this line is fine dammit!!
         # PyQt gives the QComboBox (prefixDropdown) its model() at runtime, so the type hinting is just wrong here
-        placeholder = self.prefixDropdown.model().item(0) # type: ignore
+        placeholder: QStandardItem = self.prefixDropdown.model().item(0) # type: ignore
         placeholder.setFlags(Qt.ItemFlag.NoItemFlags)
 
         with open(filename, 'r') as file:
             for line in file:
-                text = line.strip()
+                text: str = line.strip()
                 if not text:
                     continue
 
                 self.prefixDropdown.addItem(text)
-                idx = self.prefixDropdown.count() - 1
-                prefix = self.prefixDropdown.model().item(idx) # type: ignore
+                idx: int = self.prefixDropdown.count() - 1
+                prefix: QStandardItem = self.prefixDropdown.model().item(idx) # type: ignore
 
                 if any(char.islower() for char in text):
                     prefix.setFlags(Qt.ItemFlag.NoItemFlags)
-                    font = prefix.font()
+                    font: QFont = prefix.font()
                     font.setBold(True)
                     prefix.setFont(font)
                     # print(f"added category {text}")
@@ -70,20 +70,20 @@ class MainWindow(QMainWindow):
         print("prefixes added")
 
 
-    def prefixSelected(self, s):
+    def prefixSelected(self, s: str) -> None:
         print(f"selected prefix: {s}")
         self.prefix = s
 
-    def regNumberAdded(self, s):
+    def regNumberAdded(self, s: str) -> None:
         print(f"current registration number: {s}")
         self.regNumber = s
 
-    def check(self):
+    def check(self) -> None:
         self.availableLabel.setText("Checking availability...")
 
-        url = f"https://schedule.dallascollege.edu/FALL/Prefix/{self.prefix}"
+        url: str = f"https://schedule.dallascollege.edu/FALL/Prefix/{self.prefix}"
 
-        result = classFullChecker.checkAvailability(url, self.regNumber)
+        result: Optional[bool] = classFullChecker.checkAvailability(url, self.regNumber)
 
         if result == True:
             self.availableLabel.setText("Seat(s) available!")
@@ -91,13 +91,3 @@ class MainWindow(QMainWindow):
             self.availableLabel.setText("No seats available :(")
         else:
             self.availableLabel.setText("Failed to retrieve results! See terminal output")
-
-
-
-app = QApplication(sys.argv)
-
-window = MainWindow()
-window.populatePrefixes("prefixes.txt")
-window.show()
-
-app.exec()
